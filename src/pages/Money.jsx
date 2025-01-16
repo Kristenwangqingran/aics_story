@@ -16,6 +16,30 @@ import { FeatureCard, TeamCard } from "@/widgets/cards";
 import { featuresData, teamData, contactData } from "@/data";
 
 export function Money() {
+  const articles = [
+    {
+      date: "Nov 7, 2024",
+      title: "Self funding a team of 15 people to get a product to market after 4 years",
+      description: "Damjan Dano has spent four years funding a product out of pocket and he's about to launch it. Here's a peek at his finances.",
+      author: "by James Fleischmann",
+      image: "/img/person1.png"  // 使用对应的图片路径
+    },
+    {
+      date: "Oct 19, 2024",
+      title: "Does your startup need more features?",
+      description: "New features won't always enhance your product. In fact, they can slow you down.",
+      author: "by Oliver Stafurik",
+      image: "/img/person2.png"
+    },
+    {
+      date: "Sep 26, 2024",
+      title: "26-year-old dropped everything to build a better life. 17 years later, he's making $29k MRR.",
+      description: "Sorin Alupoaie left everything behind, built a life for himself, and started a business. Now it's making $24k MRR. Here's a peek at his finances.",
+      author: "by James Fleischmann",
+      image: "/img/person3.png"
+    }
+  ];
+
   return (
     <>
       <div className="relative flex h-screen content-center items-center justify-center pt-16 pb-32">
@@ -29,7 +53,7 @@ export function Money() {
                 color="white"
                 className="mb-6 font-black"
               >
-                赚钱案例
+                创业故事集
               </Typography>
               <Typography variant="lead" color="white" className="opacity-80">
               你想赚钱吗，你想了解人们在经营企业时花费、赚取、储蓄和投资了多少钱的故事和细目，
@@ -54,50 +78,60 @@ export function Money() {
               />
             ))}
           </div>
-          <div className="mt-32 flex flex-wrap items-center">
-            <div className="mx-auto -mt-8 w-full px-4 md:w-5/12">
-              <div className="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-full bg-blue-gray-900 p-2 text-center shadow-lg">
-                <FingerPrintIcon className="h-8 w-8 text-white " />
-              </div>
-              <Typography
-                variant="h3"
-                className="mb-3 font-bold"
-                color="blue-gray"
-              >
-                你的初创公司是否需要更多功能？
-              </Typography>
-              <Typography className="mb-8 font-normal text-blue-gray-500">
-              新功能并不总能增强你的产品。事实上，它们可能会减慢你的速度。
-              </Typography>
-              <Button variant="filled">详情</Button>
-            </div>
-            <div className="mx-auto mt-24 flex w-full justify-center px-4 md:w-4/12 lg:mt-0">
-              <Card className="shadow-lg border shadow-gray-500/10 rounded-lg">
-                <CardHeader floated={false} className="relative h-56">
-                  <img
-                    alt="Card Image"
-                    src="/img/Person.png"
-                    className="h-full w-full"
-                  />
-                </CardHeader>
-                <CardBody>
-                  <Typography variant="small" color="blue-gray" className="font-normal">2024 年 10 月 19 日</Typography>
+
+          {articles.map((article, index) => (
+            <div key={index} className="border-b border-blue-gray-50">
+              <div className="flex flex-wrap items-center py-8">
+                <div className="mx-auto w-full px-4 md:w-5/12">
+                  <div className="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-full bg-blue-gray-900 p-2 text-center shadow-lg">
+                    <FingerPrintIcon className="h-8 w-8 text-white" />
+                  </div>
+
                   <Typography
-                    variant="h5"
+                    variant="h3"
+                    className="mb-3 font-bold"
                     color="blue-gray"
-                    className="mb-3 mt-2 font-bold"
                   >
-                
+                    {article.title}
                   </Typography>
-                  <Typography className="font-normal text-blue-gray-500">
-                  什么更重要：增加功能还是保持足够的灵活性以适应？显然，适应性才是王道。新功能并不总能增强你的产品。事实上，它们可能会减慢你的速度。每增加一个功能，都会增加复杂性，使快速调整和改进变得更加困难......
+                  <Typography className="mb-8 font-normal text-blue-gray-500">
+                    {article.description}
                   </Typography>
-                </CardBody>
-              </Card>
+                  <Button variant="filled">详情</Button>
+                </div>
+
+                <div className="mx-auto flex w-full justify-center px-4 md:w-4/12">
+                  <Card className="shadow-lg border shadow-gray-500/10 rounded-lg">
+                    <CardHeader floated={false} className="relative h-56">
+                      <img
+                        alt="Card Image"
+                        src={article.image}
+                        className="h-full w-full"
+                      />
+                    </CardHeader>
+                    <CardBody>
+                      <Typography variant="small" color="blue-gray" className="font-normal">
+                        {article.date}
+                      </Typography>
+                      <Typography
+                        variant="h5"
+                        color="blue-gray"
+                        className="mb-3 mt-2 font-bold"
+                      >
+                        {article.title}
+                      </Typography>
+                      <Typography className="font-normal text-blue-gray-500">
+                        {article.description}
+                      </Typography>
+                    </CardBody>
+                  </Card>
+                </div>
+              </div>
             </div>
-          </div>
+          ))}
         </div>
       </section>
+      {/* 注释掉团队展示部分的开始 
       <section className="px-4 pt-20 pb-48">
         <div className="container mx-auto">
           <PageTitle section="Our Team" heading="Here are our heroes">
@@ -126,6 +160,8 @@ export function Money() {
           </div>
         </div>
       </section>
+      注释掉团队展示部分的结束 */}
+      {/* 注释掉 Co-Working 和 Contact Us 部分的开始
       <section className="relative bg-white py-24 px-4">
         <div className="container mx-auto">
           <PageTitle section="Co-Working" heading="Build something">
@@ -188,6 +224,7 @@ export function Money() {
           </form>
         </div>
       </section>
+      注释掉 Co-Working 和 Contact Us 部分的结束 */}
       <div className="bg-white">
         <Footer />
       </div>

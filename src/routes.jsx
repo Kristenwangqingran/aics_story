@@ -2,30 +2,24 @@ import { Money, Profile, SignIn, SignUp } from "@/pages";
 
 export const routes = [
   {
-    name: "赚钱案例集",
+    name: "创业故事集",
     path: "/money",
     element: <Money />,
   },
   {
-    name: "profile",
+    name: "AI 变现指南",
     path: "/profile",
     element: <Profile />,
   },
   {
-    name: "Sign In",
+    name: "AI 提示词合集",
     path: "/sign-in",
     element: <SignIn />,
   },
   {
-    name: "Sign Up",
+    name: "AI 日报",
     path: "/sign-up",
     element: <SignUp />,
-  },
-  {
-    name: "Docs",
-    href: "https://www.material-tailwind.com/docs/react/installation",
-    target: "_blank",
-    element: "",
   },
 ];
 

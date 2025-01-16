@@ -15,6 +15,7 @@ export function Footer({ title, description, socials, menus, copyright }) {
             <Typography className="font-normal text-blue-gray-500 lg:w-2/5">
               {description}
             </Typography>
+            {/* 注释掉社交媒体图标部分
             <div className="mx-auto mt-6 mb-8 flex justify-center gap-2 md:mb-0 lg:justify-start">
               {socials.map(({ color, name, path }) => (
                 <a
@@ -31,6 +32,7 @@ export function Footer({ title, description, socials, menus, copyright }) {
                 </a>
               ))}
             </div>
+            */}
           </div>
           <div className="mx-auto mt-12 grid w-max grid-cols-2 gap-24 lg:mt-0">
             {menus.map(({ name, items }) => (
@@ -67,7 +69,7 @@ export function Footer({ title, description, socials, menus, copyright }) {
           <div className="mx-auto w-full px-4 text-center">
             <Typography
               variant="small"
-              className="font-normal text-blue-gray-500"
+              className="font-normal text-blue-gray-500 text-left"
             >
               {copyright}
             </Typography>
@@ -79,9 +81,8 @@ export function Footer({ title, description, socials, menus, copyright }) {
 }
 
 Footer.defaultProps = {
-  title: "Material Tailwind",
-  description:
-    "Easy to use React components for Tailwind CSS and Material Design.",
+  title: "AI赋能未来",
+  description: "创业案例，AI盈利项目和前沿AI新闻，一网打尽",
   socials: [
     {
       color: "gray",
@@ -106,53 +107,48 @@ Footer.defaultProps = {
   ],
   menus: [
     {
-      name: "useful links",
+      name: "快速导航",
       items: [
-        { name: "About Us", path: "https://www.creative-tim.com/presentation" },
-        { name: "Blog", path: "https://www.creative-tim.com/blog" },
+        { name: "创业故事集", path: "https://www.creative-tim.com/presentation" },
+        { name: "AI 变现指南", path: "https://www.creative-tim.com/blog" },
         {
-          name: "Github",
+          name: "AI 提示词合集",
           path: "https://www.github.com/creativetimofficial/material-tailwind?ref=mtk",
         },
         {
-          name: "Free Products",
+          name: "AI 日报",
           path: "https://www.creative-tim.com/templates/free?ref=mtk",
         },
       ],
     },
     {
-      name: "other resources",
+      name: "关于我们",
       items: [
         {
-          name: "MIT License",
+          name: "免责声明",
           path: "https://github.com/creativetimofficial/material-tailwind/blob/main/LICENSE.md?ref=mtk",
         },
         {
-          name: "Contribute",
+          name: "合作伙伴",
           path: "https://github.com/creativetimofficial/material-tailwind/blob/main/CONTRIBUTING.md?ref=mtk",
         },
         {
-          name: "Change Log",
+          name: "联系我们",
           path: "https://github.com/creativetimofficial/material-tailwind/blob/main/CHANGELOG.md?ref=mtk",
-        },
-        {
-          name: "Contact Us",
-          path: "https://creative-tim.com/contact-us?ref=mtk",
         },
       ],
     },
   ],
   copyright: (
     <>
-      Copyright © {year} Material Tailwind by{" "}
+      备案号：{" "}
       <a
-        href="https://www.creative-tim.com?ref=mtk"
+        href="https://beian.miit.gov.cn/"
         target="_blank"
         className="text-blue-gray-500 transition-colors hover:text-blue-500"
       >
-        Creative Tim
+        粤ICP备2024294126号
       </a>
-      .
     </>
   ),
 };

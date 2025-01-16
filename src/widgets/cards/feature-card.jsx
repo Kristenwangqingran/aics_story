@@ -3,21 +3,15 @@ import {
   Card,
   CardBody,
   Typography,
-  IconButton,
 } from "@material-tailwind/react";
 
-export function FeatureCard({ color, icon, title, description }) {
+export function FeatureCard({ color, title, icon, description }) {
   return (
     <Card className="rounded-lg shadow-lg shadow-gray-500/10">
       <CardBody className="px-8 text-center">
-        <IconButton
-          variant="gradient"
-          size="lg"
-          color={color}
-          className="pointer-events-none mb-6 rounded-full"
-        >
+        <div className={`mx-auto mb-6 grid h-12 w-12 place-items-center rounded-lg bg-${color}-500/10`}>
           {icon}
-        </IconButton>
+        </div>
         <Typography variant="h5" className="mb-2" color="blue-gray">
           {title}
         </Typography>
@@ -30,36 +24,14 @@ export function FeatureCard({ color, icon, title, description }) {
 }
 
 FeatureCard.defaultProps = {
-  color: "blue",
+  color: "gray",
 };
 
 FeatureCard.propTypes = {
-  color: PropTypes.oneOf([
-    "blue-gray",
-    "gray",
-    "brown",
-    "deep-orange",
-    "orange",
-    "amber",
-    "yellow",
-    "lime",
-    "light-green",
-    "green",
-    "teal",
-    "cyan",
-    "light-blue",
-    "blue",
-    "indigo",
-    "deep-purple",
-    "purple",
-    "pink",
-    "red",
-  ]),
-  icon: PropTypes.node.isRequired,
+  color: PropTypes.string,
   title: PropTypes.string.isRequired,
-  description: PropTypes.node.isRequired,
+  icon: PropTypes.node.isRequired,
+  description: PropTypes.string.isRequired,
 };
-
-FeatureCard.displayName = "/src/widgets/layout/feature-card.jsx";
 
 export default FeatureCard;
