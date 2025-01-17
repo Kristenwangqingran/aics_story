@@ -1,4 +1,4 @@
 export * from "@/pages/Money";
-export * from "@/pages/profile";
-export * from "@/pages/sign-in";
-export * from "@/pages/sign-up";
+export * from "@/pages/AiCases";
+export * from "@/pages/Prompt";
+export * from "@/pages/AiNews";

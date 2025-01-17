@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Typography, Card, CardHeader, CardBody } from "@material-tailwind/react";
 import { Footer } from "@/widgets/layout";
 
-export function Profile() {
+export function AiCases() {
   const [cases, setCases] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -305,4 +305,4 @@ export function Profile() {
   );
 }
 
-export default Profile;
+export default AiCases;
