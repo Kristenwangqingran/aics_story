@@ -17,25 +17,31 @@ import { featuresData, teamData, contactData } from "@/data";
 
 export function Money() {
   const handleArticleClick = (articleId) => {
-    window.location.href = `/articles/${articleId}.html`;
+    // 找到对应的文章
+    const article = articles.find(a => a.id === articleId);
+    if (article && article.url) {
+      window.location.href = `${article.url}.html`;
+    }
   };
 
   const articles = [
     {
       id: "article-1",
       date: "2024-11-07",
-      title: "自筹资金组建一个由15人组成的团队，4年后将产品推向市场",
+      title: "自筹资金组建一个由 15 人组成的团队，在4年后将产品推向市场",
       description: "36岁的 Damjan Dano 花了17年时间打造了一家非常成功的服务公司，后来才决定打造一些更具可扩展性的东西。2018 年，他开始打造 Aqtos，虽然进展缓慢，但他终于开始向公众推出......",
       author: "By James Fleischmann",
-      image: "/img/Person1.png"
+      image: "/img/Person1.png",
+      url: "/money/bootstrapped-founder-builds-15-person-team-and-launches-product-after-4-years"
     },
     {
       id: "article-2",
       date: "2024-09-26",
-      title: "26 岁的放弃了一切，去创造更好的生活。17年后，月收入为29,000美元",
+      title: "26岁放弃一切去追求更好的生活，17年后月收入达29,000美元",
       description: "43 岁的 Sorin Alupoaie 抛弃了一切，和妻子从罗马尼亚搬到了都柏林。经过一段不确定的时期后，他的收入有所提高，然后辞去了工作，专注于自己的生意......",
       author: "By James Fleischmann",
-      image: "/img/Person2.png"
+      image: "/img/Person2.png",
+      url: "/money/26-year-old-leaves-everything-behind-for-a-better-life-now-making-29k-mo"
     },
     {
       id: "article-3",
@@ -43,7 +49,8 @@ export function Money() {
       title: "29岁的创始人每月入1.2万美元，正试图打造下一个独角兽",
       description: "29 岁的 Farid Shukurov 的目标是将他的产品 Beep 打造成独角兽。为了实现这一目标，尽管性格内向，他还是学习了销售技巧。他在这方面做得越来越好。他刚刚获得了 20 万美元的融资，上个月的收入为 12,278 美元......",
       author: "By James Fleischmann",
-      image: "/img/Person3.png"
+      image: "/img/Person3.png",
+      url: "/money/29-year-old-founder-making-12k-mo-is-trying-to-build-the-next-unicorn"
     },
     {
       id: "article-4",
@@ -51,7 +58,8 @@ export function Money() {
       title: "你的初创公司是否需要更多功能？",
       description: "新功能并不总能增强你的产品。事实上，它们可能会减慢你的速度...",
       author: "By Oliver Stafurik",
-      image: "/img/Person4.png"
+      image: "/img/Person4.png",
+      url: "/money/does-your-startup-need-more-features"
     },
     {
       id: "article-5",
@@ -59,7 +67,8 @@ export function Money() {
       title: "37岁的白手起家的初创公司创始人谈如何明智地而不是激进地储蓄",
       description: "2016年，Anshul搬到卢森堡，创办了托管服务公司 Razrtech。后来，他创立了 Socially，以满足为自己而非仅为客户打造业务的需求。如今，他的白手起家的初创公司年收入达 100 万美元......",
       author: "By anulee95",
-      image: "/img/Person5.png"
+      image: "/img/Person5.png",
+      url: "/money/37-year-old-bootstrapped-startup-founder-on-saving-smartly-not-aggressively"
     },
     {
       id: "article-6",
@@ -67,7 +76,8 @@ export function Money() {
       title: "39岁的连续创业者有望从他的最新创业公司获得9位数的收益",
       description: "经过多年的连续创业，39 岁的 Richart Ruddie 终于重振旗鼓，出售了其他业务，为他的最新创业公司 CaptainCompliance.com 提供资金。自上个月上市以来，他的ARR已接近100万美元......",
       author: "By anulee95",
-      image: "/img/Person6.png"
+      image: "/img/Person6.png",
+      url: "/money/39-year-old-serial-founder-set-to-make-9-figures-from-his-latest-startup"
     },
     {
       id: "article-7",
@@ -75,7 +85,8 @@ export function Money() {
       title: "39岁的创始人通过自由职业为自己的创业之旅筹集资金：“这是学习如何经营企业的最好方式",
       description: "Sashe Vuchkov 的梦想是建立一个或多个盈利的微型 SaaS 项目，但迄今为止他还没有取得重大成功。尽管如此，他仍然对自己的最新项目 JSFreak.com 充满信心。以下是他如何为盈利之旅筹集资金......",
       author: "By anulee95",
-      image: "/img/Person7.png"
+      image: "/img/Person7.png",
+      url: "/money/39-year-old-founder-financing-his-journey-with-freelancing-it-s-the-best-way-to-learn-how-to-run-a-business"
     },
     {
       id: "article-8",
@@ -83,28 +94,28 @@ export function Money() {
       title: "25 岁的营销人员辞去工作，推出自己的 MVP：“只要我做自己喜欢的事，无论多少钱我都可以生活",
       description: "25 岁的 Alex Liu 于 6 月辞去工作，全身心投入到他的新产品AutoAE上。该产品于 7 月推出，目前他的 MRR 为 400 美元，还有六个月的运营时间......",
       author: "By James Fleischmann",
-      image: "/img/Person8.png"
+      image: "/img/Person8.png",
+      url: "/money/25-year-old-marketer-quits-his-job-to-launch-his-mvp-i-can-live-on-any-amount-as-long-as-i-m-doing-what-i-love"
     }
   ];
 
   return (
     <>
-      <div className="relative flex h-screen content-center items-center justify-center pt-16 pb-32">
-        <div className="absolute top-0 h-full w-full bg-[url('/img/background-3.png')] bg-cover bg-center" />
-        <div className="absolute top-0 h-full w-full bg-black/60 bg-cover bg-center" />
-        <div className="max-w-8xl container relative mx-auto">
-          <div className="flex flex-wrap items-center">
-            <div className="ml-auto mr-auto w-full px-4 text-center lg:w-8/12">
+      <div className="relative flex h-[66vh] items-center overflow-hidden">
+        <div className="bg-profile-background absolute top-0 h-full w-full bg-[url('/img/background-3.png')] bg-cover bg-center scale-105" />
+        <div className="absolute inset-0 bg-black/60" />
+        <div className="relative w-full">
+          <div className="container mx-auto px-4">
+            <div className="text-center">
               <Typography
                 variant="h1"
                 color="white"
                 className="mb-6 font-black"
               >
-                创业故事集
+                互联网创业
               </Typography>
               <Typography variant="lead" color="white" className="opacity-80">
-              你想赚钱吗，你想了解人们在经营企业时花费、赚取、储蓄和投资了多少钱的故事和细目，
-              以及指导他们做出财务决策的策略的权威资源。如果你对此感兴趣，那么你来对地方了。
+                互联网创业故事，助力你做出正确决策
               </Typography>
             </div>
           </div>
@@ -139,12 +150,16 @@ export function Money() {
 
                     <Typography
                       variant="h3"
-                      className="mb-3 font-bold"
+                      className="mb-3 font-bold cursor-pointer hover:text-blue-500"
                       color="blue-gray"
+                      onClick={() => handleArticleClick(article.id)}
                     >
                       {article.title}
                     </Typography>
-                    <Typography className="mb-8 font-normal text-blue-gray-500">
+                    <Typography 
+                      className="mb-8 font-normal text-blue-gray-500 cursor-pointer hover:text-blue-700"
+                      onClick={() => handleArticleClick(article.id)}
+                    >
                       {article.description}
                     </Typography>
                     <Button 
@@ -157,7 +172,7 @@ export function Money() {
 
                   <div className="mx-auto flex w-full justify-center px-4 md:w-4/12">
                     <Card 
-                      className="shadow-lg border shadow-gray-500/10 rounded-lg cursor-pointer"
+                      className="shadow-lg border shadow-gray-500/10 rounded-lg cursor-pointer hover:shadow-lg"
                       onClick={() => handleArticleClick(article.id)}
                     >
                       <CardHeader floated={false} className="relative h-56">

@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 import { Typography, IconButton } from "@material-tailwind/react";
 
 const year = new Date().getFullYear();
@@ -47,16 +48,27 @@ export function Footer({ title, description, socials, menus, copyright }) {
                 <ul className="mt-3">
                   {items.map((item) => (
                     <li key={item.name}>
-                      <Typography
-                        as="a"
-                        href={item.path}
-                        target="_blank"
-                        rel="noreferrer"
-                        variant="small"
-                        className="mb-2 block font-normal text-blue-gray-500 hover:text-blue-gray-700"
-                      >
-                        {item.name}
-                      </Typography>
+                      {item.path.startsWith('http') ? (
+                        <Typography
+                          as="a"
+                          href={item.path}
+                          target="_blank"
+                          rel="noreferrer"
+                          variant="small"
+                          className="mb-2 block font-normal text-blue-gray-500 hover:text-blue-gray-700"
+                        >
+                          {item.name}
+                        </Typography>
+                      ) : (
+                        <Typography
+                          as={Link}
+                          to={item.path}
+                          variant="small"
+                          className="mb-2 block font-normal text-blue-gray-500 hover:text-blue-gray-700"
+                        >
+                          {item.name}
+                        </Typography>
+                      )}
                     </li>
                   ))}
                 </ul>
@@ -109,15 +121,15 @@ Footer.defaultProps = {
     {
       name: "快速导航",
       items: [
-        { name: "创业故事集", path: "https://www.creative-tim.com/presentation" },
-        { name: "AI 变现指南", path: "https://www.creative-tim.com/blog" },
+        { name: "互联网创业", path: "/money" },
+        { name: "AI 变现指南", path: "/profile" },
         {
           name: "AI 提示词合集",
-          path: "https://www.github.com/creativetimofficial/material-tailwind?ref=mtk",
+          path: "/sign-in",
         },
         {
           name: "AI 日报",
-          path: "https://www.creative-tim.com/templates/free?ref=mtk",
+          path: "/sign-up",
         },
       ],
     },

@@ -2,7 +2,7 @@ import { Money, Profile, SignIn, SignUp } from "@/pages";
 
 export const routes = [
   {
-    name: "创业故事集",
+    name: "互联网创业",
     path: "/money",
     element: <Money />,
   },
