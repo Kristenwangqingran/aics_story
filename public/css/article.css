@@ -1,0 +1,81 @@
+/* 主题颜色 */
+:root {
+  --ih-bg: #1f2937;
+  --ih-text: #e5e7eb;
+  --ih-link: #60a5fa;
+  --ih-border: #374151;
+}
+
+/* 基础样式 */
+body {
+  background-color: var(--ih-bg);
+  color: var(--ih-text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  line-height: 1.5;
+}
+
+/* 文章容器 */
+.article-container {
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* 文章标题 */
+.article-title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 2rem;
+  line-height: 1.2;
+}
+
+/* 元信息 */
+.article-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: var(--ih-text);
+  opacity: 0.8;
+  margin-bottom: 2rem;
+}
+
+/* 主图样式 */
+.article-hero {
+  width: 100%;
+  border-radius: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+/* 文章内容 */
+.article-content {
+  font-size: 1.125rem;
+  line-height: 1.75;
+}
+
+/* 引用样式 */
+.article-quote {
+  border-left: 4px solid var(--ih-link);
+  padding-left: 1rem;
+  margin: 2rem 0;
+  font-style: italic;
+  color: var(--ih-text);
+}
+
+/* 小标题 */
+.article-h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  margin: 2rem 0 1rem;
+}
+
+/* 列表样式 */
+.article-list {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+}
+
+.article-list li {
+  margin-bottom: 0.5rem;
+} 
